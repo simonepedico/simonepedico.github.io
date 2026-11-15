@@ -129,8 +129,7 @@
   const sections=[...document.querySelectorAll('main section[id],footer[id]')];
   let scheduled=false;
   function scrollUI(){
-    scheduled=false;const max=document.documentElement.scrollHeight-innerHeight;
-    $('.scroll-progress').style.transform=`scaleX(${max>0?scrollY/max:0})`;
+    scheduled=false;
     const active=sections.filter(s=>s.getBoundingClientRect().top<innerHeight*.45).at(-1)?.id||'home';
     nav.querySelectorAll('a').forEach(a=>{const on=a.hash==='#'+active;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
   }
