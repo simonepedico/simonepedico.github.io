@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d10">
+  <meta name="description" content="Academic portfolio template — Geometry Processing and 3D Computer Vision.">
+  <title>Geometry / Research portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+  <!-- Pinned CDN; content and fallback remain available if loading fails. -->
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
+  <script defer src="scene3d.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="scene" aria-hidden="true"><div class="fallback-orbit"></div></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Home"><span class="brand-mark">◈</span><span id="brand"></span></a>
+    <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu <span>+</span></button>
+    <nav id="navigation" aria-label="Main navigation"><a href="#about">About</a><a href="#publications">Publications</a><a href="#projects">Personal projects</a><a href="#lab">3DiG Lab</a><a href="#contact">Contact <span>↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> <span id="role-short"></span></p>
+        <p class="hero-name" id="name"></p>
+        <h1 id="headline"></h1>
+        <p class="hero-bio" id="bio"></p>
+        <p class="affiliation" id="affiliation"></p>
+        <div class="hero-actions"><a class="primary" href="#contact">Let’s connect <span>↗</span></a><span id="cv"></span></div>
+      </div>
+      
+      <div class="hero-bottom"><a href="#about">↓ &nbsp; Scroll to explore</a></div>
+    </section>
+    <section id="about" class="section content-section">
+      <div class="section-heading"><p class="eyebrow">01 / ABOUT</p><h2 id="about-title"></h2></div>
+      <div class="about-grid"><div class="portrait"><img id="portrait" alt="Abstract profile illustration" width="600" height="700"><span class="portrait-caption">PROFILE / <span id="portrait-label"></span></span></div><div class="about-text"><p id="about-copy"></p><p class="small-label">RESEARCH DIRECTIONS</p><div id="interests" class="tags"></div><div class="news-heading"><h3>Recent signals</h3><span class="small-label">NEWS / UPDATES</span></div><ol id="news" class="news"></ol></div></div>
+    </section>
+    <section id="publications" class="section content-section">
+      <div class="section-heading"><p class="eyebrow">02 / PUBLISHED WORK</p><div class="heading-row"><h2>Published<br><em>papers.</em></h2><p class="section-intro" id="publication-intro"></p></div></div>
+      <div class="filter-row"><div id="filters" class="filters" aria-label="Filter by research topic"></div><label class="year-label">Year <select id="year" aria-label="Filter by year"><option value="all">All years</option></select></label></div>
+      <p id="results" class="small-label" role="status" aria-live="polite"></p><div id="papers" class="papers"></div>
+    </section>
+    <section id="projects" class="section content-section">
+      <div class="section-heading"><p class="eyebrow">03 / PERSONAL PROJECTS</p><h2>Personal<br><em>projects.</em></h2></div>
+      <div class="project-grid" id="project-list"></div>
+    </section>
+    <section id="lab" class="section content-section">
+      <div class="section-heading"><p class="eyebrow">04 / RESEARCH LAB</p></div>
+      <div class="lab-grid">
+        <h2>3DiG<br><em>Research Lab.</em></h2>
+        <div class="lab-copy">
+          <p>I am part of 3DiG, the 3D Interpretation and Digital Geometry research laboratory at the University of Milano-Bicocca’s Department of Informatics, Systems and Communication (DISCo).</p>
+          <p>The lab works mainly in computer graphics, developing methods in digital geometry and advanced machine learning for geometric data. Its research spans geometry processing, shape analysis, geometric deep learning, medical applications, and geometric priors for AI.</p>
+          <div class="tags" aria-label="3DiG research areas">
+            <span class="tag">Geometry Processing</span><span class="tag">Shape Analysis</span><span class="tag">Geometric Deep Learning</span><span class="tag">Medical Applications</span><span class="tag">Geometric Priors for AI</span>
+          </div>
+          <div class="lab-actions"><a class="primary" href="https://3diglab.github.io/" target="_blank" rel="noopener noreferrer">3DiG Lab website <span>↗</span></a><a class="secondary" href="https://www.disco.unimib.it/it" target="_blank" rel="noopener noreferrer">DISCo website <span>↗</span></a></div>
+        </div>
+      </div>
+    </section>
+    <footer id="contact" class="section content-section"><p class="eyebrow">05 / LET’S CONNECT</p><h2 id="contact-title"></h2><div id="email" class="contact-link"></div><div id="contact-socials" class="contact-socials" aria-label="Professional profiles"></div><div class="footer-details"><div class="contact-address"><p id="address"></p><a id="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=U14%20ABACUS%2C%20Viale%20Sarca%20336%2C%2020125%20Milano" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></div><p id="footer-note"></p></div><div class="footer-bottom"><span id="copyright"></span><a href="#home">Back to top ↑</a></div></footer>
+  </main>
+  <dialog id="bib-dialog" aria-labelledby="bib-title"><div class="dialog-heading"><p class="eyebrow">CITATION / BIBTEX</p><button id="close-dialog" aria-label="Close citation">✕</button></div><h2 id="bib-title"></h2><pre><code id="bib-code"></code></pre><button id="copy-bib" class="primary">Copy to clipboard <span>↗</span></button><p id="copy-status" role="status" aria-live="polite"></p></dialog>
+  <noscript><div class="noscript">This portfolio requires JavaScript to display its configurable content. Enable JavaScript and reload.</div></noscript>
+</body>
+</html>
