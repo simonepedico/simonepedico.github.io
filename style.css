@@ -9,3 +9,4 @@
 .paper-visual-link{position:absolute;inset:0;z-index:2;cursor:zoom-in}.paper-visual:has(.paper-visual-link:hover) img{transform:scale(1.04)}.project .authors{margin:-4px 0 12px}.show-more{margin-top:30px}
 .project .card-link{position:absolute;inset:0;z-index:1}.project.is-linked{cursor:pointer}.project.is-linked .text-link{position:relative;z-index:2}
 #brand{text-wrap:balance}
+.arrow{width:1em;height:1em;display:inline-block;vertical-align:-.05em;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}

@@ -22,6 +22,19 @@
     if (/^https?:/.test(parsed.protocol) && parsed.origin !== location.origin) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
     return a;
   }
+  // iOS renders the ↗ character as an emoji: swap it for an inline SVG everywhere.
+  function swapArrows(root){
+    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];
+    while(walker.nextNode())if(walker.currentNode.nodeValue.includes('\u2197'))nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      const frag=document.createDocumentFragment();
+      node.nodeValue.split('\u2197').forEach((part,i)=>{
+        if(i){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','arrow');svg.setAttribute('viewBox','0 0 12 12');svg.setAttribute('aria-hidden','true');svg.innerHTML='<path d="M3 9 9 3M4.5 3H9v4.5"/>';frag.append(svg);}
+        if(part)frag.append(part);
+      });
+      node.replaceWith(frag);
+    });
+  }
   const texts = {'#brand':profile.brand,'#role-short':profile.shortRole,'#name':profile.name,'#bio':profile.bio,'#affiliation':profile.affiliation,'#about-title':profile.aboutTitle,'#about-copy':profile.about,'#portrait-label':profile.name,'#publication-intro':profile.publicationIntro,'#contact-title':profile.contactTitle,'#address':profile.address,'#footer-note':profile.footerNote};
   Object.entries(texts).forEach(([id,text]) => { $(id).textContent = text; });
   document.title = `${profile.name} / ${profile.title}`;
@@ -82,6 +95,7 @@
       if(p.bibtex){const b=el('button','bib-button','{ } BibTeX');b.addEventListener('click',()=>openBib(p,b));links.append(b);}
       content.append(links);article.append(visual,content);$('#papers').append(article);
     });
+    swapArrows($('#papers'));
   }
   renderPapers();
   const VISIBLE_PROJECTS=4;
@@ -123,4 +137,5 @@
     nav.querySelectorAll('a').forEach(a=>{const on=a.hash==='#'+active;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
   }
   addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(scrollUI);}},{passive:true});addEventListener('resize',scrollUI);scrollUI();
+  swapArrows(document.body);
 })();
