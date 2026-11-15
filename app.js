@@ -37,8 +37,6 @@
   }
   const texts = {'#brand':profile.brand,'#role-short':profile.shortRole,'#name':profile.name,'#bio':profile.bio,'#affiliation':profile.affiliation,'#about-title':profile.aboutTitle,'#about-copy':profile.about,'#portrait-label':profile.name,'#publication-intro':profile.publicationIntro,'#contact-title':profile.contactTitle,'#address':profile.address,'#footer-note':profile.footerNote};
   Object.entries(texts).forEach(([id,text]) => { $(id).textContent = text; });
-  document.title = `${profile.name} / ${profile.title}`;
-  $('meta[name="description"]').content = `${profile.name} — ${profile.title}. ${profile.bio}`;
   profile.headline.forEach(line => $('#headline').append(el('span', '', line)));
   if (profile.cv) $('#cv').append(link('CV / PDF', profile.cv)); else $('#cv').hidden = true;
   const emailURL = profile.email ? 'mailto:' + profile.email : null;

@@ -2,13 +2,13 @@
 window.SITE_DATA = {
   profile: {
     name: 'Simone Pedico', brand: 'SIMONE PEDICO / PERSONAL PAGE', shortRole: 'Geometry Processing · Machine Learning · Computer Vision',
-    title: 'PhD Student in Computer Science — Geometry Processing and Generative 3D',
+    title: 'PhD Student in Computer Science',
     headline: ['PhD student, Computer Science.', '“We used to look up at the sky', 'and wonder at our place in the stars.”'],
     bio: 'First-year PhD student at the University of Milano-Bicocca (3DiG Lab), working on geometry processing and computer vision, with a focus on matching, mesh generation and 4D reconstruction.',
     affiliation: 'University of Milano-Bicocca',
     aboutTitle: 'About me.',
     about: 'I am a first-year PhD student at the University of Milano-Bicocca, where I also obtained my Bachelor’s and Master’s degrees in Computer Science. I work under the supervision of Prof. Simone Melzi at the 3DiG Lab. My research interests are mainly in geometry processing and computer vision, with a focus on matching problem, mesh generation, and 4D tracking and reconstruction. I am also interested in 3D art and rendering. As part of my academic work, I also participated in a project on constrained AI, using neuro-symbolic constraints to predict the future positions of skeletal joints in meshes.',
-    photo: 'assets/profile.PNG', photoAlt: 'Abstract profile illustration',
+    photo: 'assets/profile.PNG', photoAlt: 'Portrait of Simone Pedico',
     interests: ['Geometry Processing', 'Shape Correspondence', '3D Generation', 'Machine Learning', 'Mesh Generation', '4D Tracking'],
     cv: null, email: 'pedico.simone@gmail.com', emailLabel: 'pedico.simone@gmail.com',
     socials: [

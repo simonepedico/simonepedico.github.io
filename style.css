@@ -10,3 +10,4 @@
 .project .card-link{position:absolute;inset:0;z-index:1}.project.is-linked{cursor:pointer}.project.is-linked .text-link{position:relative;z-index:2}
 #brand{text-wrap:balance}
 .arrow{width:1em;height:1em;display:inline-block;vertical-align:-.05em;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.quote-ref{font:10px monospace;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);opacity:.7;margin:-14px 0 30px}
